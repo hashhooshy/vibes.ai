@@ -6,5 +6,4 @@ now days AI looks like its hallusinating, off track and super unsafe. well we co
 
 **note**
 
-
 *if you wish to contribute please send a note saying Hello, hashhooshy Could I contribute to hashhooshys@gmail.com*
