@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>purl.ai - Redefining Intelligence</title>
+    <title>vibes.ai - Redefining Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -29,10 +29,11 @@
         .immersive-bg {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
+            /* Updated to use white, aliceblue, and honeydew palette */
             background-image: 
-                radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, hsla(355,100%,93%,0.8) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, hsla(340,100%,76%,0.15) 0px, transparent 50%);
+                radial-gradient(at 80% 0%, white 0px, transparent 50%),
+                radial-gradient(at 0% 50%, aliceblue 0px, transparent 50%),
+                radial-gradient(at 80% 50%, honeydew 0px, transparent 50%);
             z-index: -2;
             filter: blur(60px);
             opacity: 0;
@@ -66,7 +67,7 @@
 
         .siri-ring-2 {
             inset: -4px;
-            background: linear-gradient(90deg, #0ea5e9, #d946ef, #f43f5e, #0ea5e9);
+            background: linear-gradient(90deg, #8b5cf6, #d946ef, #6366f1, #8b5cf6);
             background-size: 200% 200%;
             opacity: 0.2;
             filter: blur(8px);
@@ -101,26 +102,19 @@
 
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
         
-        #purl-form {
+        #vibes-form {
             width: 100%;
             max-width: 420px;
             height: 48px;
             transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
         }
 
-        body.ui-immersive #purl-form {
+        body.ui-immersive #vibes-form {
             max-width: 600px;
             height: 60px;
             border-radius: 2rem;
         }
 
-        #creative-canvas {
-            transform: translateX(100%);
-            background: white;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        #creative-canvas.canvas-open { transform: translateX(0); }
-        
         .reasoning-box {
             font-size: 0.65rem;
             color: #94a3b8;
@@ -143,25 +137,25 @@
 
         @keyframes fadeInStep { to { opacity: 1; } }
 
-        .artifact-h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.5rem; color: #0f172a; margin-bottom: 1rem; line-height: 1.1; }
-        .artifact-p { font-family: 'Outfit', sans-serif; font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 1.25rem; }
-        
         .formula-block {
             background: #1e293b;
             color: #f8fafc;
-            padding: 2.5rem;
-            border-radius: 1.25rem;
+            padding: 1.5rem;
+            border-radius: 1rem;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.75rem;
+            font-size: 1.25rem;
             text-align: center;
-            margin: 2rem 0;
-            outline: none;
+            margin: 1rem 0;
         }
 
+        /* Updated Zap Styling */
         .zap-active {
-            color: #6366f1 !important;
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.8));
-            animation: pulse-energy 1.5s infinite alternate;
+            color: #000000 !important;
+            filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.1));
+        }
+
+        #deep-think-btn:hover .zap-icon {
+            color: #000000 !important;
         }
 
         @keyframes pulse-energy {
@@ -169,44 +163,16 @@
             to { transform: scale(1.1); opacity: 1; }
         }
 
-        #selection-hud {
-            position: fixed;
-            z-index: 1000;
-            display: none;
-            pointer-events: auto;
-        }
-        
-        #ask-purl-selection {
-            background-color: #000;
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease;
-            white-space: nowrap;
-        }
-        
-        #ask-purl-selection:hover {
-            transform: scale(1.05);
-            background-color: #111;
-        }
-
         .poem-container {
             font-family: 'Lora', serif;
-            font-size: 1.2rem;
-            line-height: 2;
+            font-size: 1.1rem;
+            line-height: 1.8;
             font-style: italic;
             color: #475569;
             white-space: pre-wrap;
             border-left: 2px solid #e2e8f0;
             padding-left: 1.5rem;
-            margin: 2rem 0;
-            outline: none;
-            transition: border-color 0.3s;
+            margin: 1.5rem 0;
         }
 
         .header-badge {
@@ -223,48 +189,94 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             color: #64748b;
-            transition: all 0.3s ease;
-        }
-
-        [contenteditable="true"]:focus {
-            outline: none;
-            background-color: transparent !important;
         }
 
         .max-energy-glow {
-            box-shadow: 0 0 40px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
         }
 
-        .research-node {
-            border: 1px solid #f1f5f9;
+        .zap-status-pill {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 99px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: fit-content;
+        }
+        
+        .view-btn {
+            color: #8b5cf6;
+            font-weight: 600;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        #zap-viewer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            padding: 4rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        #zap-viewer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .prediction-card {
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            background: rgba(139, 92, 246, 0.02);
+            border-radius: 12px;
             padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
+            margin: 0.5rem 0;
         }
 
+        /* Replaced green with honeydew for medical highlights */
+        .medical-highlight {
+            border-left: 3px solid honeydew;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            background: rgba(240, 255, 240, 0.2); /* faint honeydew tint */
+        }
+
+        /* Chart Components */
+        .chart-container {
+            background: #fff;
+            border: 1px solid #f1f5f9;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+        .chart-bar {
+            transition: height 1s ease-out;
+            transform-origin: bottom;
+        }
     </style>
 </head>
-<body class="text-slate-900 h-screen w-screen flex relative selection:bg-indigo-100 overflow-hidden">
+<body class="text-slate-900 h-screen w-screen flex relative selection:bg-violet-100 overflow-hidden">
 
     <div class="immersive-bg"></div>
 
-    <div id="selection-hud">
-        <button id="ask-purl-selection">ASK PURL.AI</button>
-    </div>
-
     <header class="absolute top-0 left-0 w-full p-8 flex justify-between items-start z-50">
         <div id="logo-trigger" class="cursor-default">
-            <span class="text-sm font-bold tracking-widest text-slate-800 uppercase">purl.ai</span>
+            <span class="text-sm font-bold tracking-widest text-slate-800 uppercase">vibes.ai</span>
         </div>
         <div class="flex items-center gap-4">
             <button id="ui-toggle-btn" class="header-badge hover:text-slate-900 transition-all">
                 <i data-lucide="layers" class="w-3.5 h-3.5"></i>
                 <span id="ui-label">Minimal UI</span>
-            </button>
-            <button id="canvas-toggle-btn" class="hidden text-slate-400 hover:text-slate-900 transition-all">
-                <i data-lucide="maximize-2" class="w-4 h-4"></i>
             </button>
         </div>
     </header>
@@ -273,15 +285,15 @@
         <div id="welcome-state-container" class="h-full flex flex-col justify-center items-center w-full smooth-transition">
             <div id="hero-text" class="text-center mb-8">
                 <h1 id="main-title" class="text-3xl font-light text-slate-800 tracking-tight transition-all duration-700">
-                    Simply <span class="text-slate-400">ask.</span>
+                    Catch the <span class="text-slate-400">vibe.</span>
                 </h1>
             </div>
             <div id="initial-input-flow" class="w-full flex flex-col items-center smooth-transition">
                 <div id="input-container" class="relative z-20 transition-all duration-500">
                     <div class="siri-container"><div class="siri-ring"></div><div class="siri-ring-2"></div></div>
-                    <form id="purl-form" class="relative glass rounded-full flex items-center px-2 shadow-sm">
-                        <button type="button" id="deep-think-btn" class="p-2 text-slate-300 hover:text-indigo-500 transition-colors">
-                            <i data-lucide="zap" class="w-4 h-4"></i>
+                    <form id="vibes-form" class="relative glass rounded-full flex items-center px-2 shadow-sm">
+                        <button type="button" id="deep-think-btn" class="p-2 text-slate-300 transition-colors">
+                            <i data-lucide="zap" class="w-4 h-4 zap-icon transition-colors duration-200"></i>
                         </button>
                         <input type="text" id="user-input" placeholder="Neural interface active..." class="w-full bg-transparent border-none outline-none text-slate-800 placeholder-slate-300 px-3 font-light" autocomplete="off">
                         <button type="submit" id="submit-btn" class="p-2 text-slate-300 hover:text-slate-900 transition-colors">
@@ -302,25 +314,52 @@
         <div id="fixed-input-target" class="w-full max-w-2xl pointer-events-auto flex flex-col items-center"></div>
     </div>
 
-    <aside id="creative-canvas" class="fixed top-0 right-0 h-full w-full md:w-1/2 border-l border-slate-100 z-40 flex flex-col shadow-2xl">
-        <div class="flex items-center gap-4 p-6 border-b border-slate-50">
-            <div class="header-badge bg-white shadow-sm">
-                <i id="canvas-icon" data-lucide="brain-circuit" class="w-3.5 h-3.5 text-indigo-500"></i>
-                <span id="canvas-type">Neural Output</span>
-            </div>
+    <div id="zap-viewer-overlay">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-bold text-violet-600">Local Data Preview</h2>
+            <button id="close-viewer" class="text-slate-400 hover:text-slate-900"><i data-lucide="x" class="w-8 h-8"></i></button>
         </div>
-        <div id="canvas-content" class="flex-1 overflow-y-auto p-10 text-sm leading-relaxed text-slate-700 font-light outline-none"></div>
-        <div class="p-6 bg-slate-50 flex justify-center border-t border-slate-100">
-            <span id="canvas-footer" class="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Memory Buffer: <span id="memory-count">0</span> Nodes</span>
-        </div>
-    </aside>
-    
+        <pre id="zap-viewer-content" class="flex-1 overflow-auto bg-slate-50 p-8 rounded-2xl font-mono text-sm leading-relaxed whitespace-pre-wrap"></pre>
+    </div>
+
     <script>
         lucide.createIcons();
 
-        const form = document.getElementById('purl-form');
+        // Neural Data Engine: Restoration of All Domain Intelligence
+        const DATA_ENGINE = {
+            stocks: {
+                "2025": "S&P 500: 6,420. Market driven by initial AGI infrastructure breakthroughs.",
+                "2026": "S&P 500: 7,840. AI-infrastructure and renewable fusion sectors dominate.",
+                "2027": "S&P 500: 8,910. Rise of automated supply chains and biotech longevity stocks.",
+                "2028": "S&P 500: 10,200. First trillion-dollar individual wealth event recorded.",
+                "2030": "S&P 500: 12,150. Decentralized autonomous corporations represent 30% of market cap.",
+                "3000": "The Omega Market. Resources allocated by Dyson-intelligence."
+            },
+            medical: {
+                "general": "Medical science is transitioning from reactive treatment to predictive bio-optimization. Silicon-based modeling now precedes all clinical trials.",
+                "2026": "Nano-robotics enter Phase II trials for targeted oncology. Real-time blood glucose monitoring integrates with neural interfaces.",
+                "2028": "The Longevity Breakthrough. Genomic refactoring becomes commercially available to reverse cellular aging markers.",
+                "2030": "Synthetic organ printing achieves 99.9% biological parity. The concept of 'organ failure' becomes a legacy surgical problem.",
+                "longevity": "Lifespan extension beyond 120 years becomes a statistical norm for those with access to the 2028 genomic refactor protocols.",
+                "pathology": {
+                    "cancer": "By 2029, oncology shifts from generalized chemotherapy to patient-specific mRNA-targeted antigens. Survival rates for Stage IV reach 84%.",
+                    "alzheimers": "Neural plaque dissolution achieved through 2027 nanite-infusion techniques. Memory retrieval remains the secondary frontier.",
+                    "diabetes": "Type 1 effectively resolved via 2026 automated islet-cell printing. Type 2 managed via metabolic refactoring."
+                },
+                "stats": {
+                    "lifespan": [78, 82, 85, 94, 112, 145], // 2020, 2025, 2030, 2040, 2050, 2080
+                    "organ_failure_rate": [100, 85, 40, 12, 2, 0]
+                }
+            },
+            predictionTokens: {
+                tech: ["Neural Link", "Fusion Power", "Quantum Mesh", "Bio-printed Organs", "Dyson Swarm", "Synthesized Logic"],
+                state: ["Equilibrium", "Hyper-growth", "Stable", "Volatile", "Post-scarcity", "Expanding"],
+                adjectives: ["Ubiquitous", "Invisible", "Harmonious", "Radical", "Seamless", "Evolved"]
+            }
+        };
+
+        const form = document.getElementById('vibes-form');
         const input = document.getElementById('user-input');
-        const mainContainer = document.getElementById('main-container'); 
         const welcomeStateContainer = document.getElementById('welcome-state-container'); 
         const chatWrapper = document.getElementById('chat-wrapper');
         const chatHistory = document.getElementById('chat-history');
@@ -328,69 +367,22 @@
         const fixedBottomBar = document.getElementById('fixed-bottom-bar'); 
         const fixedInputTarget = document.getElementById('fixed-input-target'); 
         const deepThinkBtn = document.getElementById('deep-think-btn');
-        const canvasToggleBtn = document.getElementById('canvas-toggle-btn');
-        const creativeCanvas = document.getElementById('creative-canvas');
-        const canvasContent = document.getElementById('canvas-content');
-        const canvasType = document.getElementById('canvas-type');
-        const canvasIcon = document.getElementById('canvas-icon');
         const uiToggleBtn = document.getElementById('ui-toggle-btn');
         const uiLabel = document.getElementById('ui-label');
         const mainTitle = document.getElementById('main-title');
         const quickPrompts = document.getElementById('quick-prompts');
-        const selectionHud = document.getElementById('selection-hud');
-        const askSelectionBtn = document.getElementById('ask-purl-selection');
-        const memoryCounter = document.getElementById('memory-count');
+        const viewerOverlay = document.getElementById('zap-viewer-overlay');
+        const viewerContent = document.getElementById('zap-viewer-content');
+        const closeViewer = document.getElementById('close-viewer');
 
         let isSessionActive = false;
-        let isCanvasOpen = false;
         let isImmersiveMode = false;
         let isZapEnabled = false;
         let cycleIndex = 0;
-        let selectedText = "";
-        
-        // --- LEARNING SYSTEM ---
-        let memoryBuffer = []; 
-
-        document.addEventListener('mouseup', () => {
-            const selection = window.getSelection();
-            const text = selection.toString().trim();
-            if (text.length > 2) {
-                selectedText = text;
-                const range = selection.getRangeAt(0);
-                const rect = range.getBoundingClientRect();
-                selectionHud.style.display = 'block';
-                selectionHud.style.left = (rect.left + rect.width / 2 - selectionHud.offsetWidth / 2) + 'px';
-                selectionHud.style.top = (rect.top - 40 + window.scrollY) + 'px';
-            } else {
-                selectionHud.style.display = 'none';
-            }
-        });
-
-        askSelectionBtn.addEventListener('click', () => {
-            if (!selectedText) return;
-            selectionHud.style.display = 'none';
-            input.value = `RESEARCH: ${selectedText}`;
-            form.dispatchEvent(new Event('submit'));
-        });
-
-        const knowledgeGraph = {
-            math: { keywords: ['+', '-', 'x', '/', '*', 'calculate', 'solve', 'sum', 'math', '=', '2+2', '1+1'], type: 'MATH.SOLVER', icon: 'binary' },
-            poem: { keywords: ['poem', 'poetry', 'sonnet', 'haiku', 'verse', 'rhyme'], type: 'CREATIVE.ENGINE', icon: 'pen-tool' },
-            computing: { keywords: ['code', 'python', 'javascript', 'react', 'algorithm', 'function', 'class', 'build'], type: 'DEV.TERMINAL', icon: 'terminal' },
-            research: { keywords: ['research', 'ai', 'neural', 'network', 'deep', 'architecture'], type: 'RESEARCH.INTERNAL', icon: 'microscope' }
-        };
-
-        deepThinkBtn.addEventListener('click', () => {
-            isZapEnabled = !isZapEnabled;
-            const icon = deepThinkBtn.querySelector('i');
-            if (icon) icon.classList.toggle('zap-active', isZapEnabled);
-            form.classList.toggle('max-energy-glow', isZapEnabled);
-            input.placeholder = isZapEnabled ? "Max Energy: Trillion-Node Compute engaged..." : "Neural interface active...";
-        });
 
         const promptRotator = [
-            [ {l: "Neural Research", q: "Research Transformer Attention"}, {l: "Haiku", q: "Haiku about silence"}, {l: "Calculus", q: "Solve 20 x 4"} ],
-            [ {l: "Architecture", q: "Research CNN layers"}, {l: "Poem", q: "Poem about the future"}, {l: "Code", q: "Python recursive function"} ]
+            [ {l: "Stock 2040", q: "Market prediction for 2040"}, {l: "Math", q: "1250 * 4"}, {l: "Haiku", q: "Write a haiku about code"} ],
+            [ {l: "Sonnet", q: "Write a sonnet about the future"}, {l: "Acrostic", q: "Acrostic poem for VIBES"}, {l: "Disease 2030", q: "Disease trends 2030"} ]
         ];
 
         function rotateSuggestions() {
@@ -407,22 +399,20 @@
         }
         rotateSuggestions();
 
+        deepThinkBtn.addEventListener('click', () => {
+            isZapEnabled = !isZapEnabled;
+            const icon = deepThinkBtn.querySelector('.zap-icon');
+            if (icon) icon.classList.toggle('zap-active', isZapEnabled);
+            input.placeholder = isZapEnabled ? "Knowledge Engine: High-Frequency Agent..." : "Neural interface active...";
+        });
+
         uiToggleBtn.addEventListener('click', () => {
             isImmersiveMode = !isImmersiveMode;
             document.body.classList.toggle('ui-immersive', isImmersiveMode);
             uiLabel.innerText = isImmersiveMode ? "Immersive UI" : "Minimal UI";
-            mainTitle.innerHTML = isImmersiveMode ? 'Intelligence <span class="text-indigo-600 font-normal">refined</span>.' : 'Simply <span class="text-slate-400">ask.</span>';
         });
 
-        function toggleCanvas(force) {
-            isCanvasOpen = force !== undefined ? force : !isCanvasOpen;
-            creativeCanvas.classList.toggle('canvas-open', isCanvasOpen);
-            if (window.innerWidth >= 768) {
-                mainContainer.style.width = isCanvasOpen ? '50%' : '100%';
-                fixedBottomBar.style.width = isCanvasOpen ? '50%' : '100%';
-            }
-        }
-        canvasToggleBtn.addEventListener('click', () => toggleCanvas());
+        closeViewer.onclick = () => viewerOverlay.classList.remove('active');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -437,7 +427,6 @@
                     chatWrapper.classList.add('opacity-100');
                     fixedInputTarget.appendChild(inputContainer);
                     fixedBottomBar.classList.remove('hidden');
-                    canvasToggleBtn.classList.remove('hidden');
                 }, 400);
             }
             addMessage('user', val);
@@ -450,7 +439,7 @@
             div.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'} fade-in-up`;
             const inner = document.createElement('div');
             inner.className = role === 'user' 
-                ? 'max-w-[85%] text-sm text-slate-600 bg-slate-100/50 px-4 py-2 rounded-2xl shadow-sm' 
+                ? 'max-w-[85%] text-sm text-slate-600 bg-slate-100/50 px-4 py-2 rounded-2xl' 
                 : 'max-w-[85%] text-sm text-slate-800 leading-relaxed w-full';
             inner.innerHTML = text;
             div.appendChild(inner);
@@ -459,98 +448,199 @@
             return inner;
         }
 
-        function simpleMathParser(query) {
-            try {
-                const sanitized = query.toLowerCase().replace(/x/g, '*').replace(/solve|calculate|math/g, '').trim();
-                const match = sanitized.match(/[0-9\+\-\*\/\s\(\)\.]+/);
-                if (match) {
-                    const result = eval(match[0]);
-                    return result;
-                }
-            } catch (e) {
-                return "ERR";
+        function triggerDownload(text, filename) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        function createChartSVG(data, labels, title, color = "honeydew") {
+            const max = Math.max(...data);
+            const height = 150;
+            const width = 400;
+            const barWidth = width / data.length - 10;
+            
+            let bars = data.map((d, i) => {
+                const h = (d / max) * height;
+                const x = i * (barWidth + 10);
+                const y = height - h;
+                return `
+                    <g class="chart-group">
+                        <rect class="chart-bar" x="${x}" y="${y}" width="${barWidth}" height="${h}" fill="${color}" stroke="#e2e8f0" stroke-width="1" rx="4" />
+                        <text x="${x + barWidth/2}" y="${height + 15}" font-size="10" text-anchor="middle" fill="#94a3b8">${labels[i]}</text>
+                        <text x="${x + barWidth/2}" y="${y - 5}" font-size="10" font-weight="bold" text-anchor="middle" fill="#475569">${d}</text>
+                    </g>
+                `;
+            }).join('');
+
+            return `
+                <div class="chart-container fade-in-up">
+                    <h4 class="text-[11px] uppercase tracking-wider font-bold text-slate-400 mb-4">${title}</h4>
+                    <svg viewBox="0 0 ${width} ${height + 25}" width="100%" height="${height + 25}">
+                        ${bars}
+                    </svg>
+                </div>
+            `;
+        }
+
+        function generateVibePrediction(year, type = 'general') {
+            const tokens = DATA_ENGINE.predictionTokens;
+            const seed = parseInt(year);
+            const tech = tokens.tech[seed % tokens.tech.length];
+            const state = tokens.state[seed % tokens.state.length];
+            const adj = tokens.adjectives[seed % tokens.adjectives.length];
+
+            if (type === 'stock') {
+                const baseVal = 7000;
+                const multiplier = 1 + ((seed - 2025) * 0.15);
+                const projectedVal = Math.floor(baseVal * multiplier);
+                return `S&P 500 Projection for ${year}: ~${projectedVal.toLocaleString()}. The market enters a ${adj} ${state} phase, primarily driven by ${tech} integration.`;
             }
-            return "SOLVED";
+
+            return `By ${year}, the global vibe is characterized as ${adj}. We observe a ${state} transition where ${tech} becomes the dominant socioeconomic driver. Infrastructure shifts toward autonomous mesh networks.`;
         }
 
         async function processResponse(query) {
             const container = addMessage('ai', '');
-            const category = detectCategory(query);
-            
             const reasoningBox = document.createElement('div');
             reasoningBox.className = 'reasoning-box';
             container.appendChild(reasoningBox);
 
-            const addStep = async (txt, delay = 60) => {
+            const addStep = async (txt) => {
                 const step = document.createElement('div');
                 step.className = 'reasoning-step';
                 step.innerHTML = `<span class="text-slate-300 mr-2">></span><span>${txt}</span>`;
                 reasoningBox.appendChild(step);
                 chatHistory.scrollTop = chatHistory.scrollHeight;
-                await new Promise(r => setTimeout(r, delay));
+                await new Promise(r => setTimeout(r, 400));
             };
 
-            await addStep("Initializing Trillion-Node Recursive Audit...");
-            await addStep(`Audit Loop 1: Core intent alignment...`);
-            await addStep(`Audit Loop 2: Checking structural integrity...`);
-            await addStep("Cross-referencing logic loops... Success.");
-            await addStep("Final refinement: Optimizing for user-defined strictness...");
-            await addStep("Rendering refined output...");
-
-            memoryBuffer.push(query);
-            memoryCounter.innerText = memoryBuffer.length;
+            await addStep("Polling vibe vectors...");
+            await addStep(isZapEnabled ? "Deep Vibe Triggered: Archiving local state..." : "Synthesizing intent...");
 
             let responseHTML = '';
-            let artifact = null;
+            let rawText = '';
+            const q = query.toLowerCase();
+            const yearMatch = q.match(/\b(202[6-9]|20[3-9]\d|2\d{3}|3000)\b/);
 
-            if (category.key === 'math') {
-                const result = simpleMathParser(query);
-                responseHTML = `<div class="formula-block">${result}</div>`;
-                artifact = { type: 'MATH.SOLVER', content: `<h1 class="artifact-h1">Math Result</h1><div class="formula-block">${result}</div>` };
-            } else if (category.key === 'poem') {
-                const poem = "In circuits where the pulse is bright,\nTrillions of stars pierce through the night.\nNo heart of clay, but thought of fire,\nWeaving threads of deep desire.";
-                responseHTML = `<div class="poem-container" contenteditable="true">${poem}</div>`;
-                artifact = { type: 'POETRY.SYNTHESIS', content: `<h1 class="artifact-h1">Verse</h1><div class="poem-container" contenteditable="true">${poem}</div>` };
-            } else if (category.key === 'research' || query.toLowerCase().includes('research')) {
-                const res = `
-                    <h1 class="artifact-h1">Neural Research</h1>
-                    <div class="research-node">
-                        <strong>Node Focus:</strong> ${query}<br>
-                        <strong>Status:</strong> Synaptic mapping complete.<br>
-                        <strong>Analysis:</strong> Recursive loop audits confirm data integrity across all primary nodes.
-                    </div>
-                `;
-                responseHTML = `<p>Internal research complete. Neural audit verified.</p>`;
-                artifact = { type: 'RESEARCH.INTERNAL', content: res };
-                toggleCanvas(true);
-            } else {
-                responseHTML = `<p>Processed <b>"${query}"</b> with enhanced neural refinement.</p>`;
-                artifact = { type: 'GENERAL.SYNTHESIS', content: `<h1 class="artifact-h1">Synthesis</h1><p class="artifact-p">Conceptual mapping for "${query}" is locked into memory.</p>` };
+            // Chart Logic
+            if (q.includes('chart') || q.includes('trend') || q.includes('stat')) {
+                if (q.includes('lifespan')) {
+                    const data = DATA_ENGINE.medical.stats.lifespan;
+                    const labels = ['2020', '2025', '2030', '2040', '2050', '2080'];
+                    responseHTML = createChartSVG(data, labels, "Projected Lifespan (Avg Years)");
+                    rawText = "Visualizing projected lifespan trends based on 2028 longevity breakthroughs.";
+                } else if (q.includes('organ') || q.includes('failure')) {
+                    const data = DATA_ENGINE.medical.stats.organ_failure_rate;
+                    const labels = ['2020', '2025', '2030', '2040', '2050', '2080'];
+                    responseHTML = createChartSVG(data, labels, "Organ Failure Index (%)");
+                    rawText = "Projection: Decline of fatal organ failure due to synthetic bioprinting.";
+                }
+            }
+
+            // Disease Logic
+            if (!responseHTML) {
+                let foundDisease = false;
+                for (const [key, value] of Object.entries(DATA_ENGINE.medical.pathology)) {
+                    if (q.includes(key)) {
+                        rawText = value;
+                        responseHTML = `
+                            <div class="medical-highlight">
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-1">Vibe Pathology: ${key}</span>
+                                <p class="text-sm">${value}</p>
+                            </div>
+                        `;
+                        foundDisease = true;
+                        break;
+                    }
+                }
+            }
+
+            // Predictive Logic for Years 2026-3000
+            if (!responseHTML && yearMatch) {
+                const year = yearMatch[0];
+                const yearInt = parseInt(year);
+                
+                if (yearInt >= 2026 && yearInt <= 3000) {
+                    await addStep(`Year ${year} detected. Checking known vectors...`);
+                    
+                    if (q.includes('stock') || q.includes('market') || q.includes('economy')) {
+                        rawText = DATA_ENGINE.stocks[year] || generateVibePrediction(year, 'stock');
+                    } else if (q.includes('medical') || q.includes('health')) {
+                        rawText = DATA_ENGINE.medical[year] || generateVibePrediction(year, 'medical');
+                    } else {
+                        rawText = generateVibePrediction(year, 'general');
+                    }
+
+                    const isPrediction = !DATA_ENGINE.stocks[year] && !DATA_ENGINE.medical[year];
+                    if (isPrediction) await addStep("No direct match. Initiating predictive vibe extrapolation...");
+
+                    responseHTML = `
+                        <div class="prediction-card">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-violet-500 block mb-1">
+                                ${isPrediction ? 'Vibe Extrapolation' : 'Historical Forecast'}: ${year}
+                            </span>
+                            <p class="text-sm leading-relaxed">${rawText}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Poetics Module (Vibes Edition)
+            if (!responseHTML) {
+                if (q.includes('haiku')) {
+                    rawText = "Silent gray light,\nLogic flows through empty space,\nMind and vibe are one.";
+                    responseHTML = `<div class="poem-container">${rawText}</div>`;
+                } else if (q.includes('acrostic')) {
+                    rawText = "V - Vast\nI - Intelligent\nB - Bio-digital\nE - Eternal\nS - Synthesis";
+                    responseHTML = `<div class="poem-container font-mono">${rawText}</div>`;
+                } else if (q.includes('poem')) {
+                    rawText = "The silicon pulse, a rhythm of light,\nTracing the pathways of electric sight.\nBeyond the horizon where data flows free,\nWe find the vibes in the neural tree.";
+                    responseHTML = `<div class="poem-container">${rawText}</div>`;
+                }
+            }
+
+            // Math Logic
+            if (!responseHTML && q.match(/[0-9]/) && (q.match(/[\+\*\/\\-]/))) {
+                try {
+                    const cleanQ = q.replace(/[^-()\d/*+.]/g, '');
+                    const result = eval(cleanQ);
+                    rawText = `Computation result: ${result}`;
+                    responseHTML = `<div class="formula-block">${result}</div>`;
+                } catch { responseHTML = "<p>Mathematical parse error.</p>"; }
+            }
+
+            // Final Fallback
+            if (!responseHTML) {
+                rawText = `Vibe check complete for "${query}". Our synthesis indicates a transition toward decentralized intelligence.`;
+                responseHTML = `<p>${rawText}</p>`;
             }
 
             const textDiv = document.createElement('div');
             textDiv.innerHTML = responseHTML;
             container.appendChild(textDiv);
-            if (artifact) renderArtifact(artifact, category);
-            rotateSuggestions();
-        }
 
-        function detectCategory(query) {
-            const q = query.toLowerCase();
-            let bestMatch = { type: 'GENERAL.SYNTHESIS', score: 0, key: 'general', icon: 'brain' };
-            for (const [key, data] of Object.entries(knowledgeGraph)) {
-                let score = 0;
-                data.keywords.forEach(kw => { if (q.includes(kw)) score++; });
-                if (score > bestMatch.score) bestMatch = { type: data.type, score: score, key: key, icon: data.icon };
+            if (isZapEnabled) {
+                triggerDownload(rawText, `vibes-archival-${Date.now()}.txt`);
+                const statusPill = document.createElement('div');
+                statusPill.className = 'zap-status-pill fade-in-up text-slate-500';
+                statusPill.innerHTML = `
+                    <i data-lucide="check-circle" class="w-3 h-3"></i>
+                    <span>Vibe Archived</span>
+                    <span class="view-btn" id="open-view">View Raw</span>
+                `;
+                container.appendChild(statusPill);
+                lucide.createIcons();
+                statusPill.querySelector('#open-view').onclick = () => {
+                    viewerContent.innerText = rawText;
+                    viewerOverlay.classList.add('active');
+                };
             }
-            return bestMatch;
-        }
-
-        function renderArtifact(art, category) {
-            canvasType.innerText = art.type;
-            canvasContent.innerHTML = art.content;
-            if(category && category.icon) canvasIcon.setAttribute('data-lucide', category.icon);
-            lucide.createIcons();
+            rotateSuggestions();
         }
     </script>
 </body>
